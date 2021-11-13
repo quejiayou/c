@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main()
+{
+	int a, b, c, d;
+	int n[20], m[20];
+	int i, j;
+	int x, y=0;
+	scanf("%d", &a);
+	for (i = 0; i < a; i++)
+	{
+		scanf("%d", &n[i]);
+	}
+	for (i = 0; i < a; i++)
+	{
+		if (n[0] > n[i])
+		{
+			y = i;
+		}
+	}
+	c = n[y];
+	n[y] = n[0];
+	n[0] = c;
+
+	scanf("%d", &b);
+	for (i = 0; i < b; i++)
+	{
+		scanf("%d", &m[i]);
+	}
+	for (i = 0; i < b; i++)
+	{
+		if (m[0] > n[i])
+		{
+			y = i;
+		}
+	}
+	d = m[y];
+	m[y] = m[0];
+	m[0] = d;
+	for (i = 0; i < a; i++)
+	{
+		printf("%d ", n[i]);
+	}
+	printf("\n");
+	for (i = 0; i < b; i++)
+	{
+		printf("%d ", m[i]);
+	}
+	return 0;
+}
