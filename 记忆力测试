@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+	int a[20];
+	int b, c;
+	int i,m=0;
+	scanf("%d", &b);
+	for (i = 0; i < b; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	scanf("%d", &c);
+	for (i = 0; i < b; i++)
+	{
+		if (c == a[i])
+		{
+			m++;
+		}
+
+	}
+	printf("%d", m);
+	return 0;
+}
