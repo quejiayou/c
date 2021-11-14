@@ -1,1 +1,0 @@
-//#include <stdio.h>//int main()//{//	int a[10];//	int i;//	printf("原来顺序:");//	for (i = 0; i < 10; i++)//	{//		a[i] = i;//		printf("%d ", a[i]);//	}//	//	printf("\n倒序之后:");//	for (i = 9; i >= 0; i--)//	{//		a[i] = i;//		printf("%d ", a[i]);//	}//
