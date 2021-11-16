@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main()
+{
+	int a[10];
+	int n,max,min,t,x,y;
+	int i;
+	x = y = 0;
+
+	scanf("%d", &n);
+	for (i = 0; i < n; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	max = min = a[0];
+	for (i = 0; i < n; i++)
+	{
+		if (max < a[i])
+		{
+			max = a[i];
+			x = i;
+		}
+		if (min > a[i])
+		{
+			min = a[i];
+			y = i;
+		}
+	}
+	t = a[x]; a[x] = a[y]; a[y] = t;
+	for (i = 0; i < n; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	return 0;
+}
