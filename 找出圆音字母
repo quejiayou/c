@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main()
+{
+	char arr[101];
+	int i;
+	int a, o,j, e, u;
+	a = o = j = e = u = 0;
+	gets(arr);
+	for (i = 0; i < 100; i++)
+	{
+		if (arr[i] == 'a')
+		{
+			a++;
+		}
+		else if (arr[i] == 'e')
+		{
+			e++;
+		}
+		else if (arr[i] == 'o')
+		{
+			o++;
+		}
+		else if (arr[i] == 'i')
+		{
+			j++;
+		}
+		else if (arr[i] == 'u')
+		{
+			u++;
+
+		}
+	}
+		printf("i:%d o:%d a:%d u:%d e:%d ", j, o, a, u, e);
+	
+	return 0;
+}
