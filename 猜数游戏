@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+void menu()
+{
+	int ret = rand()%100;//0-99
+	int a = 0;
+	printf("我已经想好了一个数字，快来猜猜\n");
+	while (a!=ret)
+	{
+		scanf("%d", &a);
+		if (a > ret)
+		{
+			printf("大了哦\n");
+		}
+		else if (a < ret)
+		{
+			printf("小了哦\n");
+		}
+		else
+		{
+			printf("你太棒了呀\n");
+		}
+	}
+}
+int main()
+{
+	srand ((unsigned int)time(NULL));
+	int in;
+	do
+	{
+		printf("请选择1或者0\n");
+		scanf("%d", &in);
+		switch (in)
+		{
+		case 1:
+			menu();
+			break;
+		case 0:
+
+			break;
+		default :
+			printf("重新选择\n");
+			break;
+		}
+	} while (in);
+	printf("欢迎下次再来");
+	return 0;
+}
