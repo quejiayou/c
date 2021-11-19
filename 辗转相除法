@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+int main()
+{
+	int a, b, t;
+	scanf("%d%d", &a, &b);
+	while (t = a % b)
+	{
+		b = a;
+		a = t;
+	}
+	printf("%d",b);
+//最小公倍数：a*b/t;
+	return 0;
+}
