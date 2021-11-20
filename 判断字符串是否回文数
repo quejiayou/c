@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>									//头文件
+int main()											//main函数
+{	
+	char arr[21] = { 0 };							//初始化数组
+	int i,t;										//定义
+
+	gets(arr);										//输入arr值
+	int len = strlen(arr);							//strlen()测arr字符串长度
+	for (i = 0, t = len - 1; i < len; i++, t--)		//把长度给t要减1字符串结尾是'\0'，t从后往前数
+	{
+		if (arr[i] != arr[t])						//判断
+		{
+			printf("no");							//不是回文数 no
+			break;									//直接跳出 
+		}
+		else
+			len = 0;								//拿没用的len来做判断
+	}
+	if (len == 0)									
+	{
+		printf("yes");								//输出yes
+	}
+
+	return 0;				//返回值为0
+}
