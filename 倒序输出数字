@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>									//头文件
+int main()											//main函数
+{	
+	char arr[21] = { 0 };
+	char arr2[21] = { 0 };							//初始化数组
+	int i,t;										//定义
+
+	gets(arr);										//输入arr值
+	int len = strlen(arr) - 1;						//strlen()测arr字符串长度
+	for (i = len, t = 0; i >= 0; i--)				//从后往前循环
+	{
+		if (arr[i] >= '0' && arr[i] <= '9')			//判断是否 是数字
+		{
+			arr2[t] = arr[i];						//是的话丢给arr2
+			t++;									//t加1
+		}
+	}
+	puts(arr2);										//输出arr2
+	return 0;				//返回值为0
+}
