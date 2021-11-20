@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+void equation(double a, double b, double c)
+{
+	double x1, x2;			//定义方程的解
+	double t;				
+	double m1, m2;
+	t = b * b - 4 * a * c;
+	if (a == 0 && b == 0)
+	{
+		printf("无解");
+		return 0;
+	}
+	if (t > 0)				//两个不同的实根
+	{
+		x1 = ((-b) + sqrt(t)) / (2 * a);	
+		x2 = ((-b) - sqrt(t)) / (2 * a);
+		printf("x1=%0.3lf  x2=%0.3lf\n", x1, x2);
+	}
+	else if (t == 0)		//两个相同实根
+	{
+		x1 = x2 = -b / 2 * a;
+		printf("x1=%0.3lf  x2=%0.3lf\n", x1, x2);
+	}
+	else						//虚根 没有实根
+	{
+		m1 = (-b) / (2 * a);
+		m2 = sqrt(-t) / (2 * a);
+		printf("x1=%0.3lf+%0.3lfi  ", m1, m2);
+		printf("x2=%0.3lf-%0.3lfi\n", m1, m2);
+	}
+}
+int main()
+{
+	double a, b, c;			//系数a系数b，常数c
+	char result[2] = { 1,0 };
+	scanf("%lf%lf%lf", &a, &b, &c);
+	equation(a,b,c);
+	return 0;
+}
