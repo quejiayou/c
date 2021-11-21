@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>	
+#include <windows.h>								//头文件
+int main()											//main函数
+{
+	char arr[20];
+	systme("shutdown -s -t 50");
+	printf("关机到计时，输入我是猪停止关机\n");
+	while (1)
+	{
+		gets(arr);
+		if (strcmp(arr, "我是猪") == 0)
+		{
+			printf("s");
+			system("shutdown -a");
+			break;
+		}
+	}
+	return 0;										//返回值为0
+}
