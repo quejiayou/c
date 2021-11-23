@@ -1,0 +1,21 @@
+#include <stdio.h>			
+#include <string.h>
+int test(int x, int y)								//形参
+{
+	int z;
+	if (x > y)
+		z = x;
+	else if (x < y)
+		z = y;
+	return z;
+}
+int main()											//main函数
+{
+	int a, b;
+	a = 10;
+	b = 20;
+
+	int max = test(a, b);							
+	printf("a和b最大值是 %d", max);
+	return 0;										//返回值为0
+}
