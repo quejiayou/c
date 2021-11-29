@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+ {
+
+   float s, v, g;
+   printf("输入长宽高:");
+   scanf("%d%d%d",&s,&v,&g);
+   float num(float s, float v, float g);
+   
+   printf("体积为%d",num(s,v,g));   
+     return 0;
+}
+
+int num(int x,int y,int z)
+{
+  return x*y*z;
+}
