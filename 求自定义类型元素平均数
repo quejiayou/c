@@ -1,0 +1,21 @@
+#include <stdio.h>
+#define MAXN 10
+typedef float Type;
+Type Average(Type s[], int N)
+{
+	int i = 0;
+	Type n = 0.0;
+	for (i = 0; i < N; i++)
+		n += s[i];
+	return n /N;
+}
+int main()
+{
+	int n = 0, i = 0;
+	Type s[MAXN];
+	scanf_s("%d", &n);
+	for (i = 0; i <n; i++)
+		scanf_s("%f", &s[i]);
+	printf("%.2f", Average(s, n));
+	return 0;
+}
