@@ -1,0 +1,35 @@
+#include <stdio.h>
+int Coubt(int n, int y);
+int main()
+{
+	int n, y;
+	scanf_s("%d%d", &n, &y);
+	printf("%d", Coubt(n, y));
+	return 0;
+}
+int Coubt(int n, int y)
+{
+	int x = 0;
+	int m = 0;
+	if (n < 0)
+	{
+		while (n < 0)
+		{
+			x = n % 10;
+			if (x == -y)
+				m++;
+			n /= 10;
+		}
+	return m;
+	}
+	else 
+		while (n > 0)
+		{
+			x = n % 10;
+			if (x == y)
+				m++;
+			n /= 10;
+		}
+	return m;
+	
+}
