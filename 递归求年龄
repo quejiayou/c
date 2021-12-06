@@ -1,0 +1,16 @@
+#include <stdio.h>
+int num(int n)
+{
+	if (n <= 1 )
+		return 10;
+	else
+		return num(n - 1) + 2;
+}
+int main()
+{
+	int n;
+	printf("输入想知道第几个孩子的年龄:");
+	scanf_s("%d", &n);
+	printf("第%d孩子的年龄是:%d",n, num(n));
+	return 0;
+}
