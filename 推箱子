@@ -1,0 +1,103 @@
+#include <stdio.h>
+#include <windows.h>
+int main()
+{
+	int i = 0;
+	char arr[][30] = { "##########",
+					   "#o   x  o#",
+					   "# x s    #",
+					   "#     x  #",
+					   "#o x    o#",
+					   "##########" };
+	int x = 2, y = 4;
+	char he;
+	int n = 0;
+	printf("*推箱子小游戏*\n输入 1 开始游戏\n");
+		scanf_s("%d", &n);
+		system("cls");
+		if (n == 1)
+		{
+			while (arr[1][1] == 'o' || arr[1][8] == 'o' || arr[4][1] == 'o' || arr[4][8] == 'o')
+			{
+				for (i = 0; i < 6; i++)
+					puts(arr[i]);
+				he = getch();
+				if (he == 'w')
+				{
+					if (arr[x - 1][y] != '#' && arr[x - 1][y] != 'o' && arr[x - 1][y] != 'x')
+					{
+						arr[x][y] = ' ';
+						x--;
+						arr[x][y] = 's';
+					}
+					else if (arr[x - 1][y] == 'x' && arr[x - 2][y] != '#')
+					{
+						arr[x][y] = ' ';
+						x--;
+						arr[x][y] = 's';
+						x--;
+						arr[x][y] = 'x';
+						x++;
+					}
+				}
+				if (he == 'd')
+				{
+					if (arr[x][y + 1] != '#' && arr[x][y + 1] != 'o' && arr[x][y + 1] != 'x')
+					{
+						arr[x][y] = ' ';
+						y++;
+						arr[x][y] = 's';
+					}
+					else if (arr[x][y + 1] == 'x' && arr[x][y + 2] != '#')
+					{
+						arr[x][y] = ' ';
+						y++;
+						arr[x][y] = 's';
+						y++;
+						arr[x][y] = 'x';
+						y--;
+					}
+				}
+				if (he == 'a')
+				{
+					if (arr[x][y - 1] != '#' && arr[x][y - 1] != 'o' && arr[x][y - 1] != 'x')
+					{
+						arr[x][y] = ' ';
+						y--;
+						arr[x][y] = 's';
+					}
+					else if (arr[x][y - 1] == 'x' && arr[x][y - 2] != '#')
+					{
+						arr[x][y] = ' ';
+						y--;
+						arr[x][y] = 's';
+						y--;
+						arr[x][y] = 'x';
+						y++;
+					}
+				}
+				if (he == 's')
+				{
+					if (arr[x + 1][y] != '#' && arr[x + 1][y] != 'o' && arr[x + 1][y] != 'x')
+					{
+						arr[x][y] = ' ';
+						x++;
+						arr[x][y] = 's';
+					}
+					else if (arr[x + 1][y] == 'x' && arr[x + 2][y] != '#')
+					{
+						arr[x][y] = ' ';
+						x++;
+						arr[x][y] = 's';
+						x++;
+						arr[x][y] = 'x';
+						x--;
+					}
+				}
+				system("cls");
+			}
+		}
+
+			printf("恭喜通关");
+	return 0;
+}
