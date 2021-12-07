@@ -1,0 +1,20 @@
+#include <stdio.h>
+void num(int n)
+{
+	 static int m = 3;
+	 if (n >= 1)
+	 {
+		 printf("第%d个故事开始：从前有座山，山上有座庙，庙里有个老和尚和一个小和尚，老和尚最小和尚说:\n", n);
+		 num(n - 1);
+	 }
+	 else
+		 printf("	故事结束\n");
+	 if (m != 0)
+		 printf("第%d个故事结束\n", m--);
+}
+int main()
+{
+	int n = 3;
+	num(n);
+	return 0;
+}
