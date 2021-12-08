@@ -1,0 +1,27 @@
+#include <stdio.h>
+void num(int* max)
+{
+	int c = 0;
+	int i, j;
+	for (i = 0; i < 10; i++)
+	{
+		for (j = i + 1; j < 10; j++)
+		{
+			if (*(max + i) > *(max + j))
+			{
+				c = *(max + i);
+				*(max + i) = *(max + j);
+				*(max + j) = c;
+			}
+		}
+	}
+}
+int main()
+{
+	int	max[10] = { 10,9,8,7,6,5,4,3,2,1 };
+	int i;
+	num(max);
+	for (i = 0; i < 10; i++)
+		printf("%d ", max[i]);
+	return 0;
+}
