@@ -1,0 +1,21 @@
+#include <stdio.h>
+double pow(int n, int k)
+{
+	if (k > 0)
+	{
+		return pow(n, k - 1) * n;
+	}
+	else if (k < 0)
+	{
+		return 1.0 / (pow(n, -k));
+	}
+	else
+		return 1;
+}
+int main()
+{
+	int n = 2;
+	int k = -3;
+	printf("%lf", pow(n, k));
+	return 0;
+}
