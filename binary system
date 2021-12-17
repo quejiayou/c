@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+    int a = 13, b = 0, cont = 0;
+    int i;
+    for (i = 0; i < 32; i++)
+    {
+        b = a & 1;
+        if (b == 1)
+            cont++;
+        a = a >> 1;
+    }
+    printf("%d", cont);
+    return 0;
+}
