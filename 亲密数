@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int i, x, y, z;
+
+    for (i = 1; i < 3000; i++) {
+        for (y = 0, x = 1; x <= i / 2; x++)
+            // 计算x的所有因子之后，保存再y中
+            if (0 == (i % x))
+                y += x;
+        for (z = 0, x = 1; x <= y / 2; x++)
+            // 计算y的所有因子之后，保存再z中
+            if (0 == (y% x))
+                z+= x;
+        if (z== i && i < y)
+            printf("%4d 的亲密数是 %4d\n", i, y);
+    }
+
+    return 0;
+}
