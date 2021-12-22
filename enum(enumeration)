@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	enum DAY { A = 1, B, C };//初始化枚举
+	enum DAY like;//定义一个like类型的
+	//输入你喜欢的字母
+	printf("请输入你喜欢的颜色: (1. A, 2. B, 3. C):\n");
+	scanf_s("%d", &like);
+	switch (like)
+	{
+	case A:
+		printf("你喜欢的字母是A");
+		break;
+	case B:
+		printf("你喜欢的字母是B");
+		break;
+	case C:
+		printf("你喜欢的字母是C");
+		break;
+	default :
+		printf("没有你喜欢的颜色");
+		break;
+	}
+	return 0;
+}
