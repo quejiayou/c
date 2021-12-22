@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+	enum DAY { A, B, C, D, E, F, G, }wee;
+	int a = 4;
+	enum DAY woor;
+	woor = (enum  DAY)a;//类型转换
+	printf("%d", woor);
+	return 0;
+}
