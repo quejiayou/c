@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	//定义两个变量
+	int a = 5, b = 3;
+	//把a和b的地址放进指针pa和pb
+	int* pa = &a;
+	int* pb = &b;
+	//交换
+	int pamt = 0;
+	pamt = *pa;
+	*pa = *pb;
+	*pb = pamt;
+	//输出
+	printf("a = %d b = %d", a, b);
+	return 0;
+}
