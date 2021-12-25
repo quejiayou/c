@@ -1,0 +1,35 @@
+#include<stdio.h>
+struct N
+{
+	char a;
+	int b;
+};
+struct Sru
+{
+	struct N n;
+	char name[20];
+	int id;
+};
+void print1(struct Sru t)
+{
+	printf("%c %d %s %d\n", t.n.a, t.n.b-, t.name, t.id);
+}
+void print2(struct Sru* pc)
+{
+	printf("%c %d %s %d", pc->n.a, pc->n.b, pc->name, pc->id);
+}
+int main()
+{
+	struct Sru c = { {'w',10},"quejiayou",2003 };
+	//printf("%c\n", c.n.a);
+	//printf("%d\n", c.n.b);
+	
+	//struct Sru* pc = &c;
+	//printf("%s\n", (*pc).name);
+	//printf("%d\n", pc -> n .b);
+	//printf("%d\n", pc->id);
+	//传值和传址 打印数据结构
+	print1(c);
+	print2(&c);
+	return 0;
+}
