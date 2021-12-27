@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#define NUM 10
+int test(int an, int n)
+{
+	if (n > an)
+	{
+		printf("大了");
+		return 0;
+	}
+	else if (n < an)
+	{
+		printf("小了");
+		return 0;
+	}
+	else
+	{
+		printf("猜中了");
+		return 1;
+	}
+}
+int main()
+{
+	srand((unsigned int)time(NULL));
+	int an = 0;
+	int n = 0;
+	int cont = NUM;
+	do
+	{
+		an = rand()% 1000;
+	} while (an % 3 != 0);
+	printf("请输入3的倍数,且只有十次机会\n");
+	while (cont)
+	{
+		scanf_s("%d", &n);
+		cont--;
+		if (cont == 0 || n % 3 !=0)
+		{
+			printf("游戏结束\n");
+			break;
+		}
+		if (test(an, n) == 1)
+		{
+			break;
+		}
+		printf("还剩%d次\n", cont);
+	}	
+	printf("\n这个数是:%d\n", an);
+		return 0;
+}
