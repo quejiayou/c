@@ -1,0 +1,19 @@
+#include <stdio.h>
+int Numberfor1(int n, int m)
+{
+	int cont = 0;
+	int ret = n ^ m;
+	while (ret)
+	{
+		ret &= (ret - 1);
+		cont++;
+	}
+	return cont;
+}
+int main()
+{
+	int n = 22, m = 33;
+	int ret = Numberfor1(n, m);
+	printf("%d", ret);
+	return 0;
+}
