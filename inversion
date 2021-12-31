@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+void fb(char* fl, char* fd)
+{
+	while (fl < fd)
+	{
+		char c = *fl;
+		*fl = *fd;
+		*fd = c;
+		fl++; fd--;
+	}
+}
+int main()
+{
+	char arr[] = "I im hello word.";
+	int len = strlen(arr) - 1;
+	int i;
+	fb(arr, arr + len);
+	char* std = arr;
+	while (*std)
+	{
+		char* c = std;
+		while (*c != ' ' && *c != '\0')
+			c++;
+		fb(std, c - 1);
+		if (*c == ' ')
+			std = c + 1;
+		else
+			std = c;
+	}
+	puts(arr);
+	return 0;
+}
