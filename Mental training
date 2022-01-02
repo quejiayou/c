@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <windows.h>
+void jia()
+{
+		int n = 1 + rand() % 100;
+		int m = 1 + rand() % 100;
+		int k = 1 + rand() % 100;
+		int x = 0;
+		printf("%d + %d + %d = ", n, m, k);
+		scanf_s("%d", &x);
+		if (x == (n + m + k))
+			printf("这么厉害\n");
+		else
+			printf("你不行啊,答案是%d\n", (n + m + k));
+}
+void jian()
+{
+	int n = 1 + rand() % 100;
+	int m = 1 + rand() % 100;
+	int k = 1 + rand() % 100;
+	int x = 0;
+	printf("%d - %d - %d = ", n, m, k);
+	scanf_s("%d", &x);
+	if (x == (n - m - k))
+		printf("这么厉害\n");
+	else
+		printf("你不行啊,答案是%d\n", (n - m - k));
+}
+void cheng()
+{
+	int n = 1 + rand() % 100;
+	int m = 1 + rand() % 100;
+	int k = 1 + rand() % 100;
+	int x = 0;
+	printf("%d * %d * %d = ", n, m, k);
+	scanf_s("%d", &x);
+	if (x == (n * m * k))
+		printf("这么厉害\n");
+	else
+		printf("你不行啊,答案是%d\n", (n * m * k));
+}
+
+int main()
+{
+	srand((unsigned int)time(NULL));
+	int n = 0;
+	clock_t c, t;
+	double x = 0;
+		printf("心算训练请选择1.加法 2.减法 3.乘法\n");
+		scanf_s("%d", &n);
+		c = clock();
+		switch (n)
+		{
+		case 1:
+			jia();
+			break;
+		case 2:
+			jian();
+			break;
+		case 3:
+			cheng();
+			break;
+		default:
+			printf("输入错误\n");		
+		}
+		t = clock();
+		x = (double)(t - c) / CLOCKS_PER_SEC;
+		printf("总用时%.1lf\n", x);
+	return 0;
+}
