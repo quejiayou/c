@@ -1,0 +1,59 @@
+#include <stdio.h> 
+#include <time.h>
+#include <stdlib.h>
+int main()
+{
+	//石头剪刀布
+	//玩家出
+	//人机出
+	//判断输赢
+	int n = 0;
+	srand((unsigned int)time(NULL));
+	while (1)
+	{
+		do
+		{
+			printf("石头剪刀布：石头(0) 剪刀(1) 布(2):");
+			scanf_s("%d", &n);
+		} while (n < 0 || n > 2);
+		switch (n)
+		{
+		case 0:
+			printf("我出:石头\n");
+			break;
+		case 1:
+			printf("我出:剪刀\n");
+			break;
+		case 2:
+			printf("我出:布\n");
+			break;
+		}
+		int m = rand() % 3;
+		switch (m)
+		{
+		case 0:
+			printf("电脑出:石头\n");
+			break;
+		case 1:
+			printf("电脑出:剪刀\n");
+			break;
+		case 2:
+			printf("电脑出:布\n");
+			break;
+		}
+		int num = ((n - m) + 3) % 3;
+		switch (num)
+		{
+		case 0:
+			printf("平局\n");
+			break;
+		case 1:
+			printf("电脑赢\n");
+			break;
+		case 2:
+			printf("玩家赢\n");
+			break;
+		}
+	}
+	return 0;
+}
